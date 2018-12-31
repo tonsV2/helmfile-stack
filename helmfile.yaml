@@ -1,0 +1,21 @@
+repositories:
+  - name: chartmuseum
+    url: https://chartmuseum.fitfit.dk
+  - name: kubernetes-charts
+    url: https://kubernetes-charts.storage.googleapis.com
+
+releases:
+  - name: nginx-ingress
+    namespace: nginx-ingress
+    chart: kubernetes-charts/nginx-ingress
+  - name: whoami
+    namespace: whoami
+    chart: chartmuseum/whoami-{{ requiredEnv "STAGE" }}
+  - name: ip2country
+    namespace: ip2country
+    chart: chartmuseum/ip2country-{{ requiredEnv "STAGE" }}
+  - name: ip2flag
+    namespace: ip2flag
+    chart: chartmuseum/ip2flag-{{ requiredEnv "STAGE" }}
+#  recreatePods: true
+#  force: true
