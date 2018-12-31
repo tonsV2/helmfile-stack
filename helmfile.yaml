@@ -17,5 +17,7 @@ releases:
   - name: ip2flag
     namespace: ip2flag
     chart: chartmuseum/ip2flag-{{ requiredEnv "STAGE" }}
-#  recreatePods: true
-#  force: true
+
+helmDefaults:
+  recreatePods: true
+  force: true
