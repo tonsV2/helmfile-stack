@@ -31,10 +31,11 @@ releases:
         value: whoami.fitfit.dk
 
   - name: ip2country
-    namespace: ip2country
+    namespace: ip2
     chart: chartmuseum/ip2country-{{ requiredEnv "STAGE" }}
+
   - name: ip2flag
-    namespace: ip2flag
+    namespace: ip2
     chart: chartmuseum/ip2flag-{{ requiredEnv "STAGE" }}
 
 helmDefaults:
