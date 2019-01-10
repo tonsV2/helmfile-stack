@@ -5,9 +5,13 @@ repositories:
     url: https://kubernetes-charts.storage.googleapis.com
 
 releases:
-  - name: nginx-ingress
-    namespace: nginx-ingress
-    chart: kubernetes-charts/nginx-ingress
+#  - name: nginx-ingress
+#    namespace: nginx-ingress
+#    chart: kubernetes-charts/nginx-ingress
+#    set:
+#      - name: rbac.create
+#        value: true
+
   - name: whoami
     namespace: whoami
     chart: chartmuseum/whoami-{{ requiredEnv "STAGE" }}
