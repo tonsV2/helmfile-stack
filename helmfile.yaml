@@ -15,6 +15,21 @@ releases:
   - name: whoami
     namespace: whoami
     chart: chartmuseum/whoami-{{ requiredEnv "STAGE" }}
+
+  - name: whoami-generic
+    namespace: whoami-generic
+    chart: chartmuseum/spring #-{{ requiredEnv "STAGE" }}
+    set:
+      - name: image
+        value: tons/whoami
+      - name: tag
+        value: {{ requiredEnv "STAGE" }}
+      - name: context
+        value: /whoami
+      - name: host
+#        value: whoami.{{ requiredEnv "STAGE" }}.fitfit.dk
+        value: whoami.fitfit.dk
+
   - name: ip2country
     namespace: ip2country
     chart: chartmuseum/ip2country-{{ requiredEnv "STAGE" }}
